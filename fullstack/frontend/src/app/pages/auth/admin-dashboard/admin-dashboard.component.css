@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto; /* Centra el contenedor con margen superior e inferior */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e6ed;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: #3498db;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: left; /* Alinea el título a la izquierda */
+}
+
+p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para el botón de registro de operario */
+.admin-button {
+  background-color: #007bff; /* Un color azul */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-button:hover {
+  background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+}

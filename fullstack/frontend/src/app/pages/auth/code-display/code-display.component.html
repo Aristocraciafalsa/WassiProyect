@@ -1,0 +1,33 @@
+<div class="code-display-container">
+    <div class="code-display">
+      @if (code) {
+        <p class="code-title">CÓDIGO DE INGRESO: {{ code }}</p>
+      }
+  
+      <div class="client-info">
+        @if (companyName) {
+          <p>Nombre de la Empresa: {{ companyName }}</p>
+        }
+        @if (nit) {
+          <p>NIT: {{ nit }}</p>
+        }
+        @if (address) {
+          <p>Dirección: {{ address }}</p>
+        }
+        @if (location) {
+          <p>Localidad: {{ location }}</p>
+        }
+        @if (phoneNumber) {
+          <p>Teléfono: {{ phoneNumber }}</p>
+        }
+        @if (email) {
+          <p>Correo electrónico: {{ email }}</p>
+        }
+        @if (contactName) {
+          <p>Nombre del Encargado: {{ contactName }}</p>
+        }
+      </div>
+  
+      <button class="login-button" (click)="navigateToLoginCliente()">Iniciar Sesión</button>
+    </div>
+  </div>

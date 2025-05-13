@@ -1,0 +1,35 @@
+<div class="login-container">
+    <form (ngSubmit)="onSubmit()" class="login-form">
+        <h2>Inicio de Sesión Cliente</h2>
+
+        <input
+            type="text"
+            [(ngModel)]="code"
+            name="code"
+            placeholder="Código de 6 dígitos"
+            required
+            pattern="\d{6}"
+            maxlength="6"
+            class="form-control"
+            (input)="clearError()"
+        >
+
+        <div *ngIf="error" class="error-message">
+            {{ error }}
+        </div>
+
+        <button
+            type="submit"
+            [disabled]="isLoading || !code || code.length !== 6"
+            class="login-button"
+        >
+            <span *ngIf="!isLoading">INGRESAR</span>
+            <span *ngIf="isLoading">PROCESANDO...</span>
+        </button>
+
+        <div class="login-options">
+            <p>¿Eres administrador u operario? <a routerLink="/login-admin-operario">Ingresar aquí</a></p>
+            <p>¿No tienes cuenta? <a routerLink="/register">Registrarse</a></p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="confirmation-container">
+    <h1 class="page-title">CONFIRMACIÓN DE PEDIDO</h1>
+  
+    <div class="client-info">
+      <h2>Información del Cliente</h2>
+      <p><strong>Empresa:</strong> {{clientData?.companyName}}</p>
+      <p><strong>NIT:</strong> {{clientData?.nit}}</p>
+      <p><strong>Dirección:</strong> {{clientData?.address}}</p>
+      <p><strong>Ciudad:</strong> {{clientData?.location}}</p>
+      <p><strong>Teléfono:</strong> {{clientData?.phoneNumber}}</p>
+      <p><strong>Email:</strong> {{clientData?.email}}</p>
+    </div>
+  
+    <div class="quantity-section">
+      <h2>Mi Carrito</h2>
+      <div class="quantity-control">
+        <label for="quantity">Cantidad de Canastillas:</label>
+        <input type="number" id="quantity" [(ngModel)]="quantity" 
+               min="4" (change)="updateQuantity()">
+      </div>
+    </div>
+  
+    <button class="confirm-button" (click)="confirmOrder()">
+      CONFIRMAR PEDIDO
+    </button>
+  </div>

@@ -1,0 +1,32 @@
+<div *ngIf="pedidoDetalle">
+    <h2>Detalle del Pedido {{ pedidoDetalle._id }}</h2>
+
+    <h3>Información del Cliente</h3>
+    <p><strong>Nombre:</strong> {{ pedidoDetalle.nombreCliente }}</p>
+    <p><strong>Dirección:</strong> {{ pedidoDetalle.direccionCliente }}</p>
+    <p><strong>Localidad:</strong> {{ pedidoDetalle.localidadCliente }}</p>
+    <p><strong>Teléfono:</strong> {{ pedidoDetalle.telefonoCliente }}</p>
+    <p><strong>Email:</strong> {{ pedidoDetalle?.clienteId?.email }}</p>
+
+    <h3>Información de la Empresa</h3>
+    <p><strong>Nombre de la Compañía:</strong> {{ pedidoDetalle?.clienteId?.companyName }}</p>
+    <p><strong>NIT:</strong> {{ pedidoDetalle?.clienteId?.nit }}</p>
+
+    <h3>Detalles del Pedido</h3>
+    <p><strong>Fecha del Pedido:</strong> {{ pedidoDetalle.fechaPedido | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+    <p><strong>Fecha de Entrega:</strong> {{ pedidoDetalle.fechaEntrega | date:'yyyy-MM-dd' }}</p>
+    <p>
+        <strong>Cantidad de Canastillas:</strong>
+        <span style="color: white; font-weight: bold; background-color:blue; padding: 2px 5px; border-radius: 3px;">
+            {{ pedidoDetalle.cantidadCanastillas }}
+        </span>
+    </p>
+    <p><strong>Estado:</strong> <span [ngClass]="{'estado-pendiente': pedidoDetalle.estado === 'Pendiente', 'estado-entregado': pedidoDetalle.estado === 'Entregado'}">{{ pedidoDetalle.estado }}</span></p>
+    <p><strong>ID del Pedido:</strong> {{ pedidoDetalle._id }}</p>
+
+    <button (click)="marcarComoEntregado()">Marcar como Entregado</button>
+</div>
+
+<div *ngIf="!pedidoDetalle">
+    <p>Cargando detalles del pedido...</p>
+</div>

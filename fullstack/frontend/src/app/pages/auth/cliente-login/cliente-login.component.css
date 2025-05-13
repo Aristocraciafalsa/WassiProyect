@@ -1,0 +1,90 @@
+/* Fuente elegante */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-box {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.welcome-message {
+  color: #2c3e50; /* Azul muy oscuro casi negro */
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.sub-message {
+  color: #7f8c8d; /* Gris medio */
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.code-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #3498db; /* Azul medio */
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #2c3e50;
+  transition: border-color 0.3s;
+}
+
+.code-input:focus {
+  border-color: #2980b9; /* Azul más oscuro al enfocar */
+  outline: none;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3498db; /* Azul medio */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #2980b9; /* Azul más oscuro al hover */
+}
+
+.error-message {
+  color: #e74c3c; /* Rojo para errores */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  border: 4px solid rgba(52, 152, 219, 0.1); /* Azul claro transparente */
+  border-top-color: #3498db; /* Azul medio */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 1.5rem auto 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

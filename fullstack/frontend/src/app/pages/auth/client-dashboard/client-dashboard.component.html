@@ -1,0 +1,63 @@
+<div class="client-dashboard">
+  <h2>DATOS DEL CLIENTE</h2>
+
+  <form *ngIf="clientData" class="client-form">
+    <div class="form-group">
+      <label for="companyName">Nombre de la Empresa:</label>
+      <input type="text" id="companyName" [value]="clientData.companyName" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="nit">NIT:</label>
+      <input type="text" id="nit" [value]="clientData.nit" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Dirección:</label>
+      <input type="text" id="address" [value]="clientData.address" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Localidad:</label>
+      <input type="text" id="location" [value]="clientData.location" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Teléfono:</label>
+      <input type="text" id="phoneNumber" [value]="clientData.phoneNumber" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="contactName">Nombre del Encargado:</label>
+      <input type="text" id="contactName" [value]="clientData.contactName" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" [value]="clientData.email" readonly>
+    </div>
+
+  </form>
+
+  <h2>TOMA PEDIDO</h2>
+
+  <div class="product-display">
+    <div class="product-image">
+      <img src="../../../../assets/BOLSA_DE_AGUA.png" alt="Canastilla de Agua">
+    </div>
+    <div class="product-description">
+      <p>Canastilla con 6 unidades de agua embolsada de 6 litros cada una, perfecta para tiendas de barrio. Pedido mínimo de 4 canastillas. Producción bajo pedido para adaptarse a tus necesidades.</p>
+    </div>
+  </div>
+
+  <div class="quantity-section">
+    <label>Cantidad:</label>
+    <div class="quantity-control">
+      <button (click)="decreaseQuantity()">-</button>
+      <span>{{ quantity }}</span>
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+  </div>
+
+  <button class="order-button" [disabled]="quantity < 4" (click)="placeOrder()">PEDIR</button>
+</div>

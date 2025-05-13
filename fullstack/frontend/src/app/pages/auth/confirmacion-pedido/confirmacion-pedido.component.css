@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+.confirmation-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-title {
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.client-info {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e0e6ed;
+}
+
+.client-info h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.client-info p {
+  margin: 0.8rem 0;
+  color: #2c3e50;
+  font-weight: 400;
+}
+
+.quantity-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e0e6ed;
+}
+
+.quantity-section h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quantity-control label {
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.quantity-control input {
+  width: 80px;
+  padding: 0.8rem;
+  border: 1px solid #ecf0f1;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.confirm-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.confirm-button:hover {
+  background-color: #2980b9;
+}

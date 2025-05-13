@@ -1,0 +1,117 @@
+<div class="login-container">
+
+        <form #loginForm="ngForm" class="login-form" (ngSubmit)="login(loginForm)">
+    
+            <h2>Inicio de Sesión</h2>
+    
+    
+    
+            <input
+    
+    type="email"
+    
+    [(ngModel)]="email"
+    
+   name="email"
+    
+   placeholder="Email"
+    
+    required
+    
+    email
+    
+     #emailInput="ngModel"
+    
+     [class.is-invalid]="(emailInput.touched || submitted) && emailInput.invalid"
+    
+     class="form-control"
+    
+    >
+    
+    <div *ngIf="(emailInput.touched || submitted) && emailInput.errors?.['required']" class="error-message">
+    
+    El email es obligatorio.
+    
+     </div>
+    
+   <div *ngIf="(emailInput.touched || submitted) && emailInput.errors?.['email']" class="error-message">
+    
+    Ingresa un email válido.
+    
+    </div>
+    
+    
+    
+            <input
+    
+                type="password"
+    
+                [(ngModel)]="password"
+    
+                name="password"
+    
+                placeholder="Contraseña"
+    
+                required
+    
+                minlength="8"
+    
+                #passwordInput="ngModel"
+    
+                [class.is-invalid]="(passwordInput.touched || submitted) && passwordInput.invalid"
+    
+                class="form-control"
+    
+            >
+    
+            <div *ngIf="(passwordInput.touched || submitted) && passwordInput.errors?.['required']" class="error-message">
+    
+                La contraseña es obligatoria.
+    
+            </div>
+    
+            <div *ngIf="(passwordInput.touched || submitted) && passwordInput.errors?.['minlength']" class="error-message">
+    
+                La contraseña debe tener al menos 8 caracteres.
+    
+            </div>
+    
+    
+    
+            <div *ngIf="error" class="error-message">
+    
+                {{ error }}
+    
+            </div>
+    
+    
+    
+            <button
+    
+                type="submit"
+    
+                [disabled]="loginForm.invalid || loading"
+    
+                class="login-button"
+    
+            >
+    
+                <span *ngIf="!loading">INGRESAR</span>
+    
+                <span *ngIf="loading">PROCESANDO...</span>
+    
+            </button>
+    
+    
+    
+            <div class="login-options">
+    
+                <p>¿Eres cliente? <a routerLink="/login-cliente">Ingresar aquí</a></p>
+    
+                <p>¿No tienes cuenta? <a routerLink="/register">Registrarse</a></p>
+    
+            </div>
+    
+        </form>
+    
+    </div>

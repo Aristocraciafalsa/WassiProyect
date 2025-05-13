@@ -1,0 +1,41 @@
+<h2>Lista de Pedidos</h2>
+
+<div>
+  <label for="filtroLocalidad">Filtrar por Localidad:</label>
+  <input type="text" id="filtroLocalidad" [(ngModel)]="filtroLocalidad">
+
+  <label for="filtroEstado">Filtrar por Estado:</label>
+  <select id="filtroEstado" [(ngModel)]="filtroEstado">
+    <option value="">Todos</option>
+    <option value="Pendiente">Pendiente</option>
+    <option value="Entregado">Entregado</option>
+  </select>
+
+  <label for="filtroFechaPedido">Filtrar por Fecha de Pedido (YYYY-MM-DD):</label>
+  <input type="date" id="filtroFechaPedido" [(ngModel)]="filtroFechaPedido">
+
+  <button (click)="filtrarPedidos()">Filtrar</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre del Cliente</th>
+      <th>Fecha del Pedido</th>
+      <th>Fecha de Entrega</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedido of pedidos" (click)="verDetallePedido(pedido._id)" style="cursor: pointer;">
+      <td>{{ pedido._id }}</td>
+      <td>{{ pedido.nombreCliente }}</td>
+      <td>{{ pedido.fechaPedido | date:'yyyy-MM-dd HH:mm' }}</td>
+      <td>{{ pedido.fechaEntrega | date:'yyyy-MM-dd' }}</td>
+      <td [ngClass]="{'estado-pendiente': pedido.estado === 'Pendiente', 'estado-entregado': pedido.estado === 'Entregado'}">{{ pedido.estado }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="pedidos.length === 0">No hay pedidos para mostrar.</p>

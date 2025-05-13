@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+:host {
+  font-family: 'Montserrat', sans-serif;
+  display: block; /* Asegura que el componente ocupe el ancho disponible */
+  margin: 2rem auto; /* Centra el componente con márgenes */
+  padding: 2rem;
+  max-width: 800px; /* Ancho máximo para el detalle */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e6ed;
+}
+
+h2 {
+  color: #3498db;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+p {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-right: 0.5rem;
+}
+
+.estado-pendiente {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #e70909; /* Amarillo para Pendiente */
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.estado-entregado {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #28a745; /* Verde para Entregado */
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  background-color: #28a745; /* Verde para Marcar como Entregado */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1.5rem;
+}
+
+button:hover {
+  background-color: #218838;
+}

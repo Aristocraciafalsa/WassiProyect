@@ -1,0 +1,23 @@
+@if (userData) {
+  <div class="order-container">
+    <h2>Datos de tu Empresa</h2>
+    
+    <div class="form-group">
+      <label>Nombre Empresa:</label>
+      <input [value]="userData.companyName" readonly>
+    </div>
+  
+    <div class="form-group">
+      <label>NIT:</label>
+      <input [value]="userData.nit" readonly>
+    </div>
+  
+    <div class="order-section">
+      <h3>Realizar Pedido</h3>
+      <label>Cantidad de Canastillas (Mínimo 4):</label>
+      <input type="number" [(ngModel)]="basketCount" min="4" (change)="validateBaskets()">
+      
+      <button (click)="placeOrder()">Confirmar Pedido</button>
+    </div>
+  </div>
+}
